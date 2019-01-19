@@ -28,6 +28,8 @@
     background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../images/background.jpg) no-repeat center;
     transition: box-shadow 1s;
     border-radius: 5px;
+
+    overflow: hidden;
 }
 
 .card-wrapper:hover {
@@ -35,6 +37,9 @@
 }
 
 .card {
+    position: absolute;
+    top: -100%;
+
     height: 100%;
     width: 100%;
     background: linear-gradient(190deg, rgba(21, 199, 30, .8) 50%, rgba(233, 67, 67, .8) 0);
@@ -44,6 +49,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    transition: top .3s 1.5s;
+}
+
+.card-wrapper:hover .card {
+    top: 0;
 }
 
 .card-img {
@@ -73,7 +84,7 @@
 }
 
 .card-paragraph {
-    font-size: 14px;
+    font-size: 12px;
     color: #dddddd;
     width: 85%;
     text-align: justify;
